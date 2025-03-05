@@ -2,21 +2,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     perspective: 1000px;
-}
-
-.sphere {
-    position: relative;
-    width: 0;
-    height: 0;
-    transform-style: preserve-3d;
-}
-
-.dot {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background-color: #00f;
-    border-radius: 50%;
 }
