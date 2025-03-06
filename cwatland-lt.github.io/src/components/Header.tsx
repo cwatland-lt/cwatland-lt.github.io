@@ -1,17 +1,44 @@
-import { Box, Flex, Link as ChakraLink } from "@chakra-ui/react";
+import {
+    Link as ChakraLink,
+    MenuRoot,
+    MenuTrigger,
+    MenuPositioner,
+    MenuContent as ChakraMenuContent,
+    Stack, Flex
+} from "@chakra-ui/react";
+import {NavLink, useNavigate} from "react-router-dom";
 
 const Header: React.FC = () => {
+    const navigate = useNavigate();
+
+    const MenuLinks: React.FC = () => {
+        return (
+            <Stack>
+                <NavLink to='/animations' style={{ color: 'white', outline: 'none'}}>Animations</NavLink>
+                <NavLink to='/models' style={{ color: 'white', outline: 'none'}}>3D Models</NavLink>
+                <NavLink to='/maps' style={{ color: 'white', outline: 'none'}}>Maps</NavLink>
+            </Stack>
+        )
+    }
+
     return (
-        <Box as={'header'} position={'fixed'} left={0} top={0} width={'100%'} bg="teal.500" p={4}>
-            <Flex as="nav" justify="space-between" align="center">
-                <ChakraLink href="/" color="white" fontWeight="bold" mr={4}>
-                    Home
-                </ChakraLink>
-                <ChakraLink href="/stuff" color="white" fontWeight="bold" mr={4}>
-                    Stuff
-                </ChakraLink>
-            </Flex>
-        </Box>
+        <Flex as={'nav'} left={0} top={0} maxHeight={'64px'} width={'100%'} bg="teal.500" p={4}>
+            <ChakraLink color="white" fontWeight="bold" mr={4} onClick={() => navigate('/')}>
+                Home
+            </ChakraLink>
+            <MenuRoot>
+                <MenuTrigger asChild>
+                    <ChakraLink color="white" fontWeight="bold" mr={4}>
+                        Stuff
+                    </ChakraLink>
+                </MenuTrigger>
+                <MenuPositioner>
+                    <ChakraMenuContent width={'auto'} minWidth={0} bg="teal.500">
+                        <MenuLinks />
+                    </ChakraMenuContent>
+                </MenuPositioner>
+            </MenuRoot>
+        </Flex>
     )
 }
 

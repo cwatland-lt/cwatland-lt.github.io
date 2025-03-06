@@ -1,11 +1,10 @@
-import './Home.css';
-import Sphere from "@/components/animations/Sphere.tsx";
+import {Flex} from "@chakra-ui/react";
 
 export default function Home() {
 
     return (
-        <div className="Home">
-            <Sphere />
-        </div>
+        <Flex>
+            Hi
+        </Flex>
     );
 }
