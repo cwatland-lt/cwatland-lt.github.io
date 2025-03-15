@@ -1,0 +1,28 @@
+.smoke-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.smoke-layer {
+    position: absolute;
+    width: 200%;
+    height: 150px;
+    background: radial-gradient(circle, rgba(200, 200, 200, 0.7), rgba(220, 220, 220, 0.4), rgba(255, 255, 255, 0));
+    opacity: 0;
+    top: 70%;
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+.smoke-layer:nth-child(even) {
+    height: 170px;
+    border-radius: 60%;
+}
+
+.smoke-layer:nth-child(3n) {
+    height: 130px;
+    border-radius: 40%;
+}

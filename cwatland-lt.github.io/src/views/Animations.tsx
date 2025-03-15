@@ -1,6 +1,7 @@
 import { Flex, Grid } from "@chakra-ui/react";
 import ImageCard from "@/components/shared/ImageCard.tsx";
 import Sphere from "@/components/animations/Sphere.tsx";
+import Smoke from "@/components/animations/Smoke.tsx";
 
 const Animations: React.FC = () => {
     const cardData = [
@@ -10,9 +11,15 @@ const Animations: React.FC = () => {
             imageUrl: "./sphere.png",
             component: Sphere,
         },
+        {
+            title: "Smoke",
+            description: "Trailing smoke animation using animejs.",
+            imageUrl: "./smoke.png",
+            component: Smoke,
+        }
     ];
     return (
-        <Flex alignItems={'center'} justifyContent={'space-evenly'}>
+        <Flex alignItems={'center'} justifyContent={'space-evenly'} pt={6}>
         <Grid gap={6} templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}>
             {cardData.map((card, index) => (
                 <ImageCard

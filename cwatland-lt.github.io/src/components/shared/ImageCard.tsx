@@ -11,12 +11,12 @@ interface CardComponentProps {
 const CardComponent: React.FC<CardComponentProps> = ({ title, description, imageUrl, component: Component }) => {
     return (
         <Dialog.Root size={"cover"} placement={'top'} motionPreset={'slide-in-bottom'}>
-            <Dialog.Trigger>
+            <Dialog.Trigger asChild>
                 <Card.Root maxW={'sm'} cursor={'pointer'}>
-                    <Flex justifyContent={'center'} p={4}>
+                    <Flex justifyContent={'center'} p={4} minH={'235px'} minW={'235px'}>
                         <Image width={'200px'} fit={'contain'} src={imageUrl}/>
                     </Flex>
-                    <Card.Body>
+                    <Card.Body minH={'118px'}>
                         <Card.Title>{title}</Card.Title>
                         <Card.Description>{description}</Card.Description>
                     </Card.Body>
@@ -34,8 +34,8 @@ const CardComponent: React.FC<CardComponentProps> = ({ title, description, image
                                         <CloseButton onClick={() => store.setOpen(false)} style={{position: "absolute", top: "8px", right: "8px"}} autoFocus={false}>X</CloseButton>
                                     </Dialog.Header>
                                     <Dialog.Body>
-                                {Component && <Component />}
-                            </Dialog.Body>
+                                        {Component && <Component />}
+                                    </Dialog.Body>
                                     </>
                                 )}
 
