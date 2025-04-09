@@ -10,6 +10,7 @@ const Animations: React.FC = () => {
             description: "For this animation, I used animejs to rotate a sphere comprised of 400 dots in 3D space.",
             imageUrl: "./sphere.png",
             component: Sphere,
+            codepenLink: "https://codepen.io/cwatland-lt/pen/ByaqgPQ",
         },
         {
             title: "Smoke",
@@ -20,7 +21,7 @@ const Animations: React.FC = () => {
     ];
     return (
         <Flex alignItems={'center'} justifyContent={'space-evenly'} pt={6}>
-        <Grid gap={6} templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" }}>
+        <Grid gap={6} templateColumns={{ base: "1fr", sm: "1fr", md: "repeat(3, 1fr)" }}>
             {cardData.map((card, index) => (
                 <ImageCard
                     key={index}
@@ -28,6 +29,7 @@ const Animations: React.FC = () => {
                     description={card.description}
                     imageUrl={card.imageUrl}
                     component={card.component}
+                    codepenLink={card.codepenLink}
                 />
             ))}
         </Grid>
