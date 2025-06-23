@@ -4,7 +4,7 @@ import {
     MenuTrigger,
     MenuPositioner,
     MenuContent as ChakraMenuContent,
-    Stack, Flex
+    Stack, Flex, Image
 } from "@chakra-ui/react";
 import {NavLink, useNavigate} from "react-router-dom";
 
@@ -22,10 +22,8 @@ const Header: React.FC = () => {
     }
 
     return (
-        <Flex as={'nav'} left={0} top={0} maxHeight={'64px'} width={'100%'} bg="teal.500" p={4}>
-            <ChakraLink color="white" fontWeight="bold" mr={4} onClick={() => navigate('/')}>
-                Home
-            </ChakraLink>
+        <Flex as={'nav'} left={0} top={0} maxHeight={'64px'} width={'100%'} bg="teal.500" p={4} alignItems={'center'}>
+            <Image src="/logo.png" alt="Logo" pr={4} boxSize="64px" objectFit="contain" cursor="pointer" onClick={() => navigate('/')} />
             <MenuRoot>
                 <MenuTrigger asChild>
                     <ChakraLink color="white" fontWeight="bold" mr={4}>
